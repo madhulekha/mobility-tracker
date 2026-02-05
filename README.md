@@ -20,6 +20,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Mobility Tracker setup
+
+1. Copy `.env.example` to `.env.local` and set your Supabase project values.
+
+```bash
+cp .env.example .env.local
+# edit .env.local and add your keys
+```
+
+2. Create the database tables in Supabase. You can run the SQL in `db/schema.sql` in the Supabase SQL editor.
+
+3. Run the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+4. Open http://localhost:3000 and use the Login page to sign in (Google OAuth via Supabase).
+
+Notes:
+- The app stores daily logs in a `daily_logs` table with a `tasks` JSONB column.
+- Friend relationships can be represented with the optional `friends` table.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
